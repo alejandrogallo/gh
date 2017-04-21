@@ -71,5 +71,5 @@ def search_github(search):
         items = all_results["items"]
     logger.debug("%s matches" % len(items))
     if not len(items):
-        logger.warning("No matches" % len(items))
+        logger.warning("No matches")
     return items
