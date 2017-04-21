@@ -29,7 +29,7 @@ class Clone(Command):
         self.subparser.add_argument(
             "-o", "--out",
             help="Ouput directory",
-            default=" ",
+            default="",
             action="store"
         )
 
