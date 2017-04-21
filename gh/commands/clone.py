@@ -39,4 +39,7 @@ class Clone(Command):
             info = self.pick(results, config)
             if not info:
                 sys.exit(0)
-            call(["git", "clone", info["git_url"], args.out])
+            command = ["git", "clone", info["git_url"]]
+            if args.out:
+                command.append(args.out)
+            call(command)
