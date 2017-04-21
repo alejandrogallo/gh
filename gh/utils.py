@@ -70,4 +70,6 @@ def search_github(search):
     if all_results:
         items = all_results["items"]
     logger.debug("%s matches" % len(items))
+    if not len(items):
+        logger.warning("No matches" % len(items))
     return items

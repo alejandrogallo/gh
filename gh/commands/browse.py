@@ -37,5 +37,8 @@ class Browse(Command):
 
         """
         results = gh.utils.search_github(args.search)
-        info = self.pick(results, config)
-        webbrowser.open(info["html_url"])
+        if results:
+            info = self.pick(results, config)
+            if not info:
+                sys.exit(0)
+            webbrowser.open(info["html_url"])

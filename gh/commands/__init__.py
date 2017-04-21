@@ -4,7 +4,7 @@ import gh.utils
 COMMANDS = [
     "clone",
     "config",
-    "list",
+    "search",
     "browse"
 ]
 

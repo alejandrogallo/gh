@@ -1,5 +1,6 @@
 import gh
 import os
+import sys
 import gh.utils
 import gh.pick
 from subprocess import call
@@ -25,9 +26,17 @@ class Clone(Command):
             default="",
             action="store"
         )
+        self.subparser.add_argument(
+            "-o", "--out",
+            help="Ouput directory",
+            default=" ",
+            action="store"
+        )
 
     def main(self, config, args):
         results = gh.utils.search_github(args.search)
-        info = self.pick(results, config)
-        if info:
-            call(["git", "clone", info["git_url"]])
+        if results:
+            info = self.pick(results, config)
+            if not info:
+                sys.exit(0)
+            call(["git", "clone", info["git_url"], args.out])
