@@ -1,6 +1,7 @@
 import webbrowser
 import gh
 import os
+import sys
 import gh.utils
 from . import Command
 
