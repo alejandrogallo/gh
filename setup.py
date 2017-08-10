@@ -35,7 +35,10 @@ setup(
         'cli',
         'github'
         ],
-    packages=["gh"],
+    packages=[
+        "gh",
+        "gh.commands"
+    ],
     test_suite="gh.tests",
     entry_points=dict(
         console_scripts=[
